@@ -1,0 +1,10 @@
+Yes, I've just taken a look at https://capsules.moyra.co/. It's a conceptual website created by Moyra, a premium digital lab, showcasing "Capsules®"—a vision for modern, sustainable capsule houses in the Californian desert near Maricopa, CA (about 93252). The site promotes an immersive retreat experience under the tagline "Closer to Nature—Closer to Yourself," focusing on premium accommodations, privacy, panoramic views, and nature-inspired activities like buggy tours, hikes, and rock climbing.
+
+Key highlights include:
+- **Three Capsule Types**: Classic C® (basic premium design), Terrace C® (with outdoor terrace), and Desert C® (fully integrated into the landscape)—all featuring smart tech, spacious interiors, glass walls for desert vistas, and eco-friendly elements.
+- **Activities**: Ranging from easy 3-5 hour buggy rides to challenging 24-hour rock climbing, all tailored for adventure while emphasizing safety and connection to nature.
+- **Amenities**: Things like a wooden jacuzzi, silent surroundings for relaxation, and easy access from Los Angeles.
+- **Interactive Elements**: There's a reservation form where you can pick a capsule, dates, and duration, but it leads to a note that this is just a concept—no actual bookings are possible.
+- **Testimonials**: Fictional user stories praising the modern design, peace, and views.
+
+Overall, it's not a real booking site but a creative demo project by Moyra to highlight their web design skills. If you're interested in similar custom sites, they encourage inquiries via their main site at moyra.co. If you have more details or a specific question about it, let me know!
