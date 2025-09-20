@@ -33,6 +33,8 @@
         --chart-4: 43 74% 66%;
         --chart-5: 27 87% 67%;
         --radius: 0.5rem;
+
+        --sp: #e2c8a8;
     }
     .dark {
         --background: 240 10% 3.9%;
@@ -74,7 +76,7 @@
         @apply w-full h-full object-cover;
     }
     section {
-        @apply w-screen min-h-[100dvh];
+        @apply w-screen;
     }
 }
 
@@ -88,9 +90,6 @@
     }
     .secondary-bg {
         @apply bg-zinc-800;
-    }
-    .color-sp {
-        color: #e2c8a8;
     }
     .padding-sp {
         @apply py-[4rem];
@@ -109,6 +108,19 @@
 
     .text-shadow {
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    /*text size*/
+    .size-lg {
+        @apply text-5xl md:text-8xl;
+    }
+
+    .size-md {
+        @apply text-xl md:text-2xl;
+    }
+
+    .size-sm {
+        @apply text-sm;
     }
 
     /*hero*/

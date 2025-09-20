@@ -1,3 +1,3 @@
 fri sept 19
 
-~/programming/react-project/aquapod
+cd ~/programming/react-project/aquapod

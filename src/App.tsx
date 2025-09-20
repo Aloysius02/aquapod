@@ -9,7 +9,8 @@ import {
 } from "lenis/react"
 import {
   Hero,
-  Intro
+  Intro,
+  Discover
 } from "@/section"
 import {
   CustomEase
@@ -60,6 +61,7 @@ function App() {
     <ReactLenis root options={ { autoRaf: false }} ref={lenisRef}>
       <Hero />
       <Intro />
+      <Discover />
     </ReactLenis>
   )
 }
