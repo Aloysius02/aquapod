@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two-Color Animated Text Background</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #111;
+    }
+
+    h1 {
+      font-size: 4rem;
+      font-weight: bold;
+
+      /* Two clear colors with 50/50 split */
+      background: linear-gradient(
+        to bottom,
+        #ff7b00 0%,
+        #ff7b00 50%,
+        #00d4ff 50%,
+        #00d4ff 100%
+      );
+
+      background-size: 100% 200%; /* Taller for scrolling effect */
+      background-position: 0% 100%;
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      animation: moveBg 3s linear infinite alternate;
+    }
+
+    @keyframes moveBg {
+      from {
+        background-position: 0% 100%;
+      }
+      to {
+        background-position: 0% 0%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Animated Tex Animated Text Animated Textt</h1>
+</body>
+</html>

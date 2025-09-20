@@ -74,7 +74,7 @@
         @apply w-full h-full object-cover;
     }
     section {
-        @apply w-screen h-[100dvh];
+        @apply w-screen min-h-[100dvh];
     }
 }
 
@@ -88,6 +88,12 @@
     }
     .secondary-bg {
         @apply bg-zinc-800;
+    }
+    .color-sp {
+        color: #e2c8a8;
+    }
+    .padding-sp {
+        @apply py-[4rem];
     }
 
     /*font*/
@@ -104,5 +110,25 @@
     .text-shadow {
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     }
+
     /*hero*/
+    .masked {
+        -webkit-mask-image: url(#mask);
+        mask-image: url(#mask);
+    }
+
+    /*intro*/
+    .welcome-text {
+        background: linear-gradient(
+            to bottom,
+            #fff 0%,
+            #fff 50%,
+            #3f3f46 50%,
+            #3f3f46 100%
+        );
+        background-size: 100% 200%;
+        background-position: 0% 100%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 }
