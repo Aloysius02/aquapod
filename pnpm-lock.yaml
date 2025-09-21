@@ -41,9 +41,15 @@ importers:
       react-dom:
         specifier: ^19.1.1
         version: 19.1.1(react@19.1.1)
+      react-icons:
+        specifier: ^5.5.0
+        version: 5.5.0(react@19.1.1)
       react-responsive:
         specifier: ^10.0.1
         version: 10.0.1(react@19.1.1)
+      react-use-scroll-direction:
+        specifier: ^0.1.0
+        version: 0.1.0(react@19.1.1)
       tailwind-merge:
         specifier: ^3.3.1
         version: 3.3.1
@@ -177,6 +183,10 @@ packages:
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
+
+  '@babel/runtime@7.28.4':
+    resolution: {integrity: sha512-Q/N6JNWvIvPnLDvjlE1OUBLPQHH6l3CltCEsHIujp45zQUSSh8K+gHnaEX45yAT1nyngnINhvWtzN+Nb9D8RAQ==}
+    engines: {node: '>=6.9.0'}
 
   '@babel/template@7.27.2':
     resolution: {integrity: sha512-LPDZ85aEJyYSd18/DkjNh4/y1ntkE5KwUHWTiqgRxruuZL2F1yuHligVHLvcHY2vMHXttKFpJn6LwfI7cw7ODw==}
@@ -469,8 +479,8 @@ packages:
     cpu: [arm64]
     os: [android]
 
-  '@rollup/wasm-node@4.50.1':
-    resolution: {integrity: sha512-3oCUcKNdkemnqy6r12UdAtfYMWywGxVHSCQvtDYeEtnOcOQC/SihSXkO6+rByH2ZhbgfeTbqLiw1NDGfJDptyg==}
+  '@rollup/wasm-node@4.52.0':
+    resolution: {integrity: sha512-ELDfd164EwuLyPLhMBMP/zUfLi5RXmCbRGQpkGqfSTNATi0WLgPo96+c1W9YGEefgR+OH1okNKV+clWhgVrwIA==}
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
     hasBin: true
 
@@ -890,6 +900,9 @@ packages:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
 
+  history@5.3.0:
+    resolution: {integrity: sha512-ZqaKwjjrAYUYfLG+htGaIIZ4nioX2L70ZUMIFysS3xvBsSG4x/n1V6TXV3N8ZYNuFGlDirFg32T7B6WOUPDYcQ==}
+
   hyphenate-style-name@1.1.0:
     resolution: {integrity: sha512-WDC/ui2VVRrz3jOVi+XtjqkDjiVjTtFaAGiW37k6b+ohyQ5wYDOGkvCZa8+H0nx3gyvv0+BST9xuOgIyGQ00gw==}
 
@@ -1187,6 +1200,11 @@ packages:
     peerDependencies:
       react: ^19.1.1
 
+  react-icons@5.5.0:
+    resolution: {integrity: sha512-MEFcXdkP3dLo8uumGI5xN3lDFNsRtrjbOEKDLD7yv76v4wpnEq2Lt2qeHaQOr34I/wPN3s3+N08WkQ+CW37Xiw==}
+    peerDependencies:
+      react: '*'
+
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
@@ -1199,6 +1217,12 @@ packages:
     engines: {node: '>=14'}
     peerDependencies:
       react: '>=16.8.0'
+
+  react-use-scroll-direction@0.1.0:
+    resolution: {integrity: sha512-dOEC+rniLzeJLD5gaPhXUNp7Hd2uKqW4f246FJkCW9SS2pqIKEqBu89jxhXfaf27Vemn/UNBtNSsguDVZo7qPg==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16'
 
   react@19.1.1:
     resolution: {integrity: sha512-w8nqGImo45dmMIfljjMwOGtbmC/mk4CMYhWIicdSflH91J9TyCyczcPFXJzrZ/ZXcgGRFeP6BU0BEJTw6tZdfQ==}
@@ -1526,6 +1550,8 @@ snapshots:
       '@babel/core': 7.28.3
       '@babel/helper-plugin-utils': 7.27.1
 
+  '@babel/runtime@7.28.4': {}
+
   '@babel/template@7.27.2':
     dependencies:
       '@babel/code-frame': 7.27.1
@@ -1744,7 +1770,7 @@ snapshots:
 
   '@rollup/rollup-android-arm64@4.50.0': {}
 
-  '@rollup/wasm-node@4.50.1':
+  '@rollup/wasm-node@4.52.0':
     dependencies:
       '@types/estree': 1.0.8
     optionalDependencies:
@@ -2228,6 +2254,10 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
+  history@5.3.0:
+    dependencies:
+      '@babel/runtime': 7.28.4
+
   hyphenate-style-name@1.1.0: {}
 
   ignore@5.3.2: {}
@@ -2463,6 +2493,10 @@ snapshots:
       react: 19.1.1
       scheduler: 0.26.0
 
+  react-icons@5.5.0(react@19.1.1):
+    dependencies:
+      react: 19.1.1
+
   react-is@16.13.1: {}
 
   react-refresh@0.17.0: {}
@@ -2474,6 +2508,11 @@ snapshots:
       prop-types: 15.8.1
       react: 19.1.1
       shallow-equal: 3.1.0
+
+  react-use-scroll-direction@0.1.0(react@19.1.1):
+    dependencies:
+      history: 5.3.0
+      react: 19.1.1
 
   react@19.1.1: {}
 
@@ -2648,7 +2687,7 @@ snapshots:
       fdir: 6.5.0(picomatch@4.0.3)
       picomatch: 4.0.3
       postcss: 8.5.6
-      rollup: '@rollup/wasm-node@4.50.1'
+      rollup: '@rollup/wasm-node@4.52.0'
       tinyglobby: 0.2.14
     optionalDependencies:
       '@types/node': 24.3.1

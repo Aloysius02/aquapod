@@ -82,7 +82,7 @@
 
 @layer utilities {
     .container {
-        @apply w-full max-w-7xl px-4 md:px-6;
+        @apply w-screen max-w-7xl px-4 md:px-6;
     }
 
     .primary-bg {
@@ -93,6 +93,22 @@
     }
     .padding-sp {
         @apply py-[4rem];
+    }
+    .padding-y {
+        @apply py-[4rem];
+    }
+    .padding-x {
+        @apply px-2 sm:px-4 md:px-6;
+    }
+
+    .hide-scrollbar,
+    html {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .hide-scrollbar::-webkit-scrollbar,
+    html::-webkit-scrollbar {
+        display: none;
     }
 
     /*font*/

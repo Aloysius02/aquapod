@@ -1,5 +1,8 @@
 import Hero from "@/section/hero.tsx";
 import Intro from "@/section/intro.tsx";
 import Discover from "@/section/discover.tsx";
+import Aquapods from "@/section/aquapods.tsx";
+import Location from "@/section/location.tsx";
+import WhyAquapod from "@/section/whyAquapod.tsx";
 
-export { Hero, Intro, Discover };
+export { Hero, Intro, Discover, Aquapods, Location, WhyAquapod };

@@ -51,6 +51,21 @@ export default {
                     4: "hsl(var(--chart-4))",
                     5: "hsl(var(--chart-5))"
                 }
+            },
+            keyframes: {
+                "marquee-x": {
+                    from: { transform: "translateX(0)" },
+                    to: { transform: "translateX(calc(-100% - var(--gap)))" }
+                },
+                "marquee-y": {
+                    from: { transform: "translateY(0)" },
+                    to: { transform: "translateY(calc(-100% - var(--gap)))" }
+                }
+            },
+            animation: {
+                "marquee-horizontal":
+                    "marquee-x var(--duration) infinite linear",
+                "marquee-vertical": "marquee-y var(--duration) linear infinite"
             }
         }
     },

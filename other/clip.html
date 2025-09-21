@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Clip-path Reveal - Top to Bottom</title>
+<style>
+  :root{
+    --duration: 900ms;
+    --easing: cubic-bezier(.22,.9,.28,1);
+  }
+
+  body{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:100vh;
+    margin:0;
+    background:#111;
+    color:#fff;
+    font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  }
+
+  .card {
+    width: 340px;
+    height: 220px;
+    background: linear-gradient(135deg,#4f46e5,#06b6d4);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.25rem;
+    border-radius:12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.45);
+    /* start clipped to top (invisible) */
+    clip-path: polygon(0 0%, 100% 0%, 100% 0%, 0 0%);
+    -webkit-clip-path: polygon(0 0%, 100% 0%, 100% 0%, 0 0%);
+    animation: revealDown var(--duration) var(--easing) forwards;
+  }
+
+  @keyframes revealDown {
+    /* from: fully clipped to top (y=0%) */
+    0% {
+      clip-path: polygon(0 0%, 100% 0%, 100% 0%, 0 0%);
+      -webkit-clip-path: polygon(0 0%, 100% 0%, 100% 0%, 0 0%);
+      transform: translateY(-6px);
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(-3px);
+      opacity: 0.6;
+    }
+    /* to: fully visible (bottom opened) */
+    100% {
+      clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 100%);
+      -webkit-clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 100%);
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="card">Hello — revealed from top ↓</div>
+</body>
+</html>

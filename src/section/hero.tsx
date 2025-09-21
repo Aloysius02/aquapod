@@ -20,7 +20,7 @@ import {
 
 export default function Hero() {
   const isMobile = useMediaQuery( {
-    maxWidth: 767
+    maxWidth: 768
   });
 
   const frameCount = 126;
@@ -128,7 +128,7 @@ export default function Hero() {
           videoFrames.current.frame = targetFrame;
           render();
 
-          let opacity = gsap.utils.mapRange(0, 0.3, 1, 0, progress);
+          let opacity = gsap.utils.mapRange(0, 0.5, 1, 0, progress);
 
           gsap.set(".intro-text", {
             opacity: gsap.utils.clamp(0, 1, opacity)

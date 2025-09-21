@@ -10,7 +10,10 @@ import {
 import {
   Hero,
   Intro,
-  Discover
+  Discover,
+  Aquapods,
+  Location,
+  WhyAquapod
 } from "@/section"
 import {
   CustomEase
@@ -62,6 +65,9 @@ function App() {
       <Hero />
       <Intro />
       <Discover />
+      <Aquapods />
+      <Location />
+      <WhyAquapod />
     </ReactLenis>
   )
 }

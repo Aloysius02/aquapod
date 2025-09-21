@@ -11,9 +11,7 @@ import {
 import {
   SplitText
 } from "gsap/SplitText";
-import {
-  ScrollTrigger
-} from "gsap/ScrollTrigger";
+
 
 
 export default function Discover() {
@@ -82,9 +80,9 @@ export default function Discover() {
             </p>
             <div className="flex gap-3 flex-wrap">
               {choose.map((item, i)=>(
-                <div className={cn("px-4 py-2 rounded-full border-2 w-fit",
+                <div key={i} className={cn("px-4 py-3 rounded-full border-2 w-fit",
                   i % 2 === 0 ? "text-sp border-sp": "border-white")}>
-                  <p className="">
+                  <p className="text-[1.2rem]">
                     { item }
                   </p>
                 </div>
