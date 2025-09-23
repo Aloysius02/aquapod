@@ -75,4 +75,58 @@ const whyAquapodData = [
     }
 ];
 
-export { Aquapods, whyAquapodData };
+const Activities = [
+    {
+        id: 1,
+        difficulty: "Easy",
+        percentage: "40%",
+        duration: "2-3h",
+        title: "Paddleboard Yoga on Calm Waters",
+        description:
+            "Float into mindfulness with guided yoga on a stable paddleboard, surrounded by gentle ocean swells and sunrise views.",
+        src: "images/activity1.jpg"
+    },
+    {
+        id: 2,
+        difficulty: "Medium",
+        percentage: "60%",
+        duration: "4-8h",
+        title: "Guided Sunset Kayaking Adventure",
+        description:
+            "Paddle through tranquil bays as the sun dips below the horizon, spotting marine life and enjoying the rhythmic waves.",
+        src: "images/activity2.jpg"
+    },
+    {
+        id: 2,
+        difficulty: "Hard",
+        percentage: "80%",
+        duration: "8-12h",
+        title: "Night Snorkel in Glowing Reefs",
+        description:
+            "Dive into a magical world of glowing plankton and coral, with expert guides for a safe, enchanting underwater journey.",
+        src: "images/activity3.jpg"
+    }
+];
+
+const testimony = [
+    {
+        quote: "AquaPods® was the perfect ocean hideaway – stylish, peaceful, and fully surrounded by stunning views day and night, with the gentle sound of waves lulling me into a deep relaxation I hadn’t felt in years, making every moment on the deck a true escape from the chaos of daily life.",
+        name: "Jason Whitaker",
+        location: "San Francisco, California",
+        src: "images/avatar1.jpg"
+    },
+    {
+        quote: "The bioluminescent snorkel from the Reef A® pod was magical – the glowing waters and marine life made me feel truly connected to the sea, a serene escape I’ll never forget, with the expert guides illuminating every detail of the underwater world in a way that left me speechless and rejuvenated.",
+        name: "Sophia M.",
+        location: "Cape Town, South Africa",
+        src: "images/avatar2.jpg"
+    },
+    {
+        quote: "Floating in the solar-heated plunge pool at dusk was pure bliss – the gentle waves and starry sky above created an unforgettable sense of tranquility and renewal, with the warm water and soft bubbles washing away all stress, leaving me feeling completely at peace with the world.",
+        name: "Liam K.",
+        location: "Sydney, Australia",
+        src: "images/avatar3.jpg"
+    }
+];
+
+export { Aquapods, whyAquapodData, Activities , testimony};

@@ -4,5 +4,6 @@ import Discover from "@/section/discover.tsx";
 import Aquapods from "@/section/aquapods.tsx";
 import Location from "@/section/location.tsx";
 import WhyAquapod from "@/section/whyAquapod.tsx";
+import Activity from "@/section/activity.tsx";
 
-export { Hero, Intro, Discover, Aquapods, Location, WhyAquapod };
+export { Hero, Intro, Discover, Aquapods, Location, WhyAquapod, Activity };

@@ -34,7 +34,7 @@ export default function Discover() {
       });
 
     gsap.set(".title .line", {
-      y: -100
+      y: -120
     })
 
     gsap.to(".title .line", {
@@ -60,7 +60,7 @@ export default function Discover() {
         <p className="size-sm mb-4">
           Discover Available AquaPods®
         </p>
-        <h2 className="title size-lg mb-10 md:mb-12">Choose the one you like best</h2>
+        <h2 className="title size-lg mb-10 md:mb-12 font-medium">Choose the one you like best</h2>
 
         {/*down*/}
         <div className="flex flex-col sm:flex-row gap-10 sm:gap-10 md:gap-14

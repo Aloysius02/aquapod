@@ -84,12 +84,14 @@
     .container {
         @apply w-screen max-w-7xl px-4 md:px-6;
     }
-
     .primary-bg {
         @apply bg-zinc-900;
     }
     .secondary-bg {
         @apply bg-zinc-800;
+    }
+    .gradient-bg {
+        @apply bg-gradient-to-b from-zinc-900 via-zinc-800 to-zinc-900;
     }
     .padding-sp {
         @apply py-[4rem];
@@ -98,7 +100,7 @@
         @apply py-[4rem];
     }
     .padding-x {
-        @apply px-2 sm:px-4 md:px-6;
+        @apply px-4 md:px-6;
     }
 
     .hide-scrollbar,

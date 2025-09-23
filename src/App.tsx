@@ -13,7 +13,8 @@ import {
   Discover,
   Aquapods,
   Location,
-  WhyAquapod
+  WhyAquapod,
+  Activity
 } from "@/section"
 import {
   CustomEase
@@ -68,6 +69,7 @@ function App() {
       <Aquapods />
       <Location />
       <WhyAquapod />
+      <Activity />
     </ReactLenis>
   )
 }
