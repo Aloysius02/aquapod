@@ -17,7 +17,9 @@ import {
 import {
   SplitText
 } from "gsap/SplitText";
-
+import {
+  navLinks
+} from "@/constant"
 
 export default function Activity() {
   const isMobile = useMediaQuery( {
@@ -95,7 +97,7 @@ export default function Activity() {
     })
 
   return (
-    <section ref={container} id="activity" className="pt-[3rem] sm:pt-[5rem] gradient-bg ">
+    <section id={navLinks[4]?.id} ref={container} className="pt-[3rem] sm:pt-[5rem] gradient-bg ">
 
       <div className="padding-y">
         {/*text content*/}
@@ -148,9 +150,8 @@ export default function Activity() {
           </div>
         </div>
 
-
         {/*slider*/}
-        <div className="slider w-screen overflow-hidden max-sm:pt-[6rem] sm:h-[100dvh] sm:mt-[10rem]">
+        <div className="slider w-screen overflow-hidden max-sm:pt-[2rem] sm:h-[100dvh] mt-[4rem] sm:mt-[10rem]">
 
           <div className="slide flex items-center gap-2 sm:h-full w-[260vw] md:w-[240vw]">
             {Activities.map((item, i)=>(
@@ -208,9 +209,6 @@ export default function Activity() {
           </div>
 
         </div>
-      </div>
-      <div className="h-screen">
-
       </div>
     </section>
   )

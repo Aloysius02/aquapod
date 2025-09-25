@@ -26,6 +26,10 @@ import {
 import {
   SplitText
 } from "gsap/SplitText";
+import {
+  navLinks
+} from "@/constant"
+
 
 export default function WhyAquapod() {
   const isMobile = useMediaQuery( {
@@ -85,8 +89,9 @@ export default function WhyAquapod() {
 
   return (
     <section
-      id="whyAquapod"
+      id={navLinks[3]?.id}
       ref={container}
+
       className="min-h-[100dvh] relative"
       >
       <div className="w-screen overflow-hidden">

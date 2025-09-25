@@ -332,7 +332,7 @@ export default function Aquapod() {
             <div className="absolute inset-0 container">
               <h3 className="title text-shadow absolute top-[2rem] sm:top-1/2 sm:-translate-y-1/2 font-medium text-2xl sm:text-3xl md:text-5xl">{card?.title}</h3>
 
-              <div className="absolute bottom-[6rem] flex flex-col sm:flex-row  sm:justify-between w-full sm:pr-10 sm:items-center gap-6">
+              <div className="absolute bottom-[8rem] flex flex-col sm:flex-row  sm:justify-between w-full sm:pr-10 sm:items-center gap-6">
                 {/*left/top*/}
                 <div className="flex sm:items-center gap-4 md:gap-8 flex-col sm:flex-row">
                   <button
@@ -349,7 +349,7 @@ export default function Aquapod() {
                 </div>
 
                 {/*right/bottom*/}
-                <div className="progress w-[250px] md:w-[300px]  h-[4px] bg-zinc-800/[0.6] border-white/[0.2] border-[1px] rounded-full relative overflow-hidden">
+                <div className="progress w-[250px] md:w-[300px]  h-[2px]  bg-white/[0.3] rounded-full relative overflow-hidden">
                   <span className="absolute left-0 top-0 h-full w-0 bg-sp"></span>
                 </div>
               </div>

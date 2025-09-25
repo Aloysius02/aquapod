@@ -11,7 +11,9 @@ import {
 import {
   SplitText
 } from "gsap/SplitText";
-
+import {
+  navLinks
+} from "@/constant"
 
 
 export default function Discover() {
@@ -53,7 +55,7 @@ export default function Discover() {
 
 
   return (
-    <section id="discover" ref={container}>
+    <section id={navLinks[2]?.id} ref={container}>
       <div className="container padding-sp">
 
         {/*top*/}

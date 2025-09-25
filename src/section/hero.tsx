@@ -17,6 +17,9 @@ import {
 import {
   SplitText
 } from "gsap/SplitText";
+import {
+  navLinks
+} from "@/constant"
 
 export default function Hero() {
   const isMobile = useMediaQuery( {
@@ -114,7 +117,7 @@ export default function Hero() {
     // srollTrigger setup
     function setupScrollTrigger() {
       ScrollTrigger.create({
-        trigger: "#hero",
+        trigger: ".hero",
         start: "top top",
         end: `bottom bottom`,
         scrub: 1,
@@ -153,6 +156,13 @@ export default function Hero() {
             duration: 1,
             ease: "power1.out",
             stagger: 0.06
+          }, "<+=0.1")
+          //navbar
+          tl.to(".menu", {
+            opacity: progress > threshold ? 1: 0,
+            scale: progress > threshold ? 1: 0.6,
+            duration: 1,
+            ease: "power2.out",
           }, "<+=0.1");
         }
       });
@@ -225,6 +235,13 @@ export default function Hero() {
     gsap.set(".hero-desc .line",
       {
         y: 50
+      });
+
+    //nav bar
+    gsap.set(".menu",
+      {
+        scale: 0.6,
+        opacity: 0
       });
   }
 
@@ -306,7 +323,7 @@ export default function Hero() {
   }
 
   return (
-    <section id="hero" className="w-screen h-[700vh]">
+    <section id={navLinks[0]?.id} className="hero w-screen h-[700vh]">
       <div className="hero-container w-screen h-screen fixed top-0">
         <div
           className="masked relative w-full h-full"
@@ -319,7 +336,7 @@ export default function Hero() {
           </div>
           <div className="container absolute w-screen h-[100dvh]">
             <p className="intro-text text-shadow font-asap w-full italic text-sm
-              max-w-[200px] md:max-w-[350px] md:text-xl absolute top-[50%]
+              max-w-[250px] md:max-w-[400px] md:text-xl absolute top-[50%]
               left-[50%] -translate-x-1/2 -translate-y-1/2 text-center">
               Step into serenity with ocean vistas and golden sunsets, where AquaPods® offer eco-luxury and deep relaxation. Recharge and reconnect with nature’s embrace.
 

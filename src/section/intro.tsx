@@ -5,12 +5,19 @@ import {
 import {
   ScrollTrigger
 } from "gsap/ScrollTrigger";
+import {
+  navLinks
+} from "@/constant"
+import {
+  useRef
+} from "react"
 
 export default function Intro() {
+  const container = useRef(null)
 
   useGSAP(() => {
     ScrollTrigger.create({
-      trigger: "#intro",
+      trigger: container.current,
       start: "top bottom",
       end: "bottom bottom",
       scrub: 1,
@@ -28,7 +35,7 @@ export default function Intro() {
     gsap.to(".welcome-text", {
       backgroundPosition: "0% 0%",
       scrollTrigger: {
-        trigger: "#intro",
+        trigger: container.current,
         start: "top center",
         end: "top top",
         scrub: 1
@@ -39,7 +46,7 @@ export default function Intro() {
 
 
   return (
-    <section id="intro" className="bg-gradient-to-b from-zinc-900/[0] to-zinc-900 relative">
+    <section ref={container} id={navLinks[1]?.id} className="bg-gradient-to-b from-zinc-900/[0] to-zinc-900 relative">
       <div className="container padding-sp">
 
         <h2 className="text-2xl md:text-4xl w-full max-w-5xl

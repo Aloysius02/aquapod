@@ -14,7 +14,10 @@ import {
   Aquapods,
   Location,
   WhyAquapod,
-  Activity
+  Activity,
+  Feedback,
+  Footer,
+  NavMenu
 } from "@/section"
 import {
   CustomEase
@@ -70,6 +73,9 @@ function App() {
       <Location />
       <WhyAquapod />
       <Activity />
+      <Feedback />
+      <Footer />
+      <NavMenu />
     </ReactLenis>
   )
 }

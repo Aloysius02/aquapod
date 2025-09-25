@@ -47,6 +47,9 @@ importers:
       react-responsive:
         specifier: ^10.0.1
         version: 10.0.1(react@19.1.1)
+      react-textfit:
+        specifier: ^1.1.1
+        version: 1.1.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       react-use-scroll-direction:
         specifier: ^0.1.0
         version: 0.1.0(react@19.1.1)
@@ -69,6 +72,9 @@ importers:
       '@types/react-dom':
         specifier: ^19.1.7
         version: 19.1.9(@types/react@19.1.12)
+      '@types/react-textfit':
+        specifier: ^1.1.4
+        version: 1.1.4
       '@vitejs/plugin-react':
         specifier: ^5.0.0
         version: 5.0.2(vite@7.1.4(@types/node@24.3.1)(jiti@1.21.7)(yaml@2.8.1))
@@ -479,8 +485,8 @@ packages:
     cpu: [arm64]
     os: [android]
 
-  '@rollup/wasm-node@4.52.0':
-    resolution: {integrity: sha512-ELDfd164EwuLyPLhMBMP/zUfLi5RXmCbRGQpkGqfSTNATi0WLgPo96+c1W9YGEefgR+OH1okNKV+clWhgVrwIA==}
+  '@rollup/wasm-node@4.52.2':
+    resolution: {integrity: sha512-+nELykmplN96rbPuwgz14peiUanysRIEHiQOeMMoRxG9hF8HWKtNQtV2tJ9x8VsGo0rQG0FXZlsZlt82TbqPbw==}
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
     hasBin: true
 
@@ -509,6 +515,9 @@ packages:
     resolution: {integrity: sha512-qXRuZaOsAdXKFyOhRBg6Lqqc0yay13vN7KrIg4L7N4aaHN68ma9OK3NE1BoDFgFOTfM7zg+3/8+2n8rLUH3OKQ==}
     peerDependencies:
       '@types/react': ^19.0.0
+
+  '@types/react-textfit@1.1.4':
+    resolution: {integrity: sha512-tj3aMfbzi12r2yWn4Kzm9IkEHz7uaBU57P19FhzEA+Sr+ex0EuJezAYtBRMW3HjxylJ8PtmwpWgPT/t+j0H6zA==}
 
   '@types/react@19.1.12':
     resolution: {integrity: sha512-cMoR+FoAf/Jyq6+Df2/Z41jISvGZZ2eTlnsaJRptmZ76Caldwy1odD4xTr/gNV9VLj0AWgg/nmkevIyUfIIq5w==}
@@ -1185,6 +1194,10 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
+  process@0.11.10:
+    resolution: {integrity: sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==}
+    engines: {node: '>= 0.6.0'}
+
   prop-types@15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
 
@@ -1217,6 +1230,12 @@ packages:
     engines: {node: '>=14'}
     peerDependencies:
       react: '>=16.8.0'
+
+  react-textfit@1.1.1:
+    resolution: {integrity: sha512-UDSQRo5yBEGueLTE5SgNV9fSmr5CWJkE0E0R0YbcbCO69iuJGfcT6wspKhX2sIwdsDyT9qXOwMC80cnRolir7Q==}
+    peerDependencies:
+      react: ^15.0.0 || ^16.0.0
+      react-dom: ^15.0.0 || ^16.0.0
 
   react-use-scroll-direction@0.1.0:
     resolution: {integrity: sha512-dOEC+rniLzeJLD5gaPhXUNp7Hd2uKqW4f246FJkCW9SS2pqIKEqBu89jxhXfaf27Vemn/UNBtNSsguDVZo7qPg==}
@@ -1770,7 +1789,7 @@ snapshots:
 
   '@rollup/rollup-android-arm64@4.50.0': {}
 
-  '@rollup/wasm-node@4.52.0':
+  '@rollup/wasm-node@4.52.2':
     dependencies:
       '@types/estree': 1.0.8
     optionalDependencies:
@@ -1806,6 +1825,10 @@ snapshots:
       undici-types: 7.10.0
 
   '@types/react-dom@19.1.9(@types/react@19.1.12)':
+    dependencies:
+      '@types/react': 19.1.12
+
+  '@types/react-textfit@1.1.4':
     dependencies:
       '@types/react': 19.1.12
 
@@ -2478,6 +2501,8 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
+  process@0.11.10: {}
+
   prop-types@15.8.1:
     dependencies:
       loose-envify: 1.4.0
@@ -2508,6 +2533,13 @@ snapshots:
       prop-types: 15.8.1
       react: 19.1.1
       shallow-equal: 3.1.0
+
+  react-textfit@1.1.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
+    dependencies:
+      process: 0.11.10
+      prop-types: 15.8.1
+      react: 19.1.1
+      react-dom: 19.1.1(react@19.1.1)
 
   react-use-scroll-direction@0.1.0(react@19.1.1):
     dependencies:
@@ -2687,7 +2719,7 @@ snapshots:
       fdir: 6.5.0(picomatch@4.0.3)
       picomatch: 4.0.3
       postcss: 8.5.6
-      rollup: '@rollup/wasm-node@4.52.0'
+      rollup: '@rollup/wasm-node@4.52.2'
       tinyglobby: 0.2.14
     optionalDependencies:
       '@types/node': 24.3.1
