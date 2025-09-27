@@ -96,7 +96,7 @@ export default function WhyAquapod() {
       <div className="w-screen overflow-hidden">
         {/*heading*/}
         <div className="w-full heading">
-          <div className="padding-x">
+          <div className="padding-x container">
             <p className="sub text-sm">
               Want to learn more about
               <br />
