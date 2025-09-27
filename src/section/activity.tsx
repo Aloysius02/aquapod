@@ -101,13 +101,12 @@ export default function Activity() {
 
       <div className="padding-y">
         {/*text content*/}
-        <div className="container padding-x">
-
+        <div className=" container padding-x">
           {/*heading*/}
           <p className="size-sm mb-6">
             Ready for an adventure?
           </p>
-          <h1 className="title size-lg font-medium">Discover the Ocean Experiences</h1>
+          <h1 className="title size-xl leading-none font-medium">Discover the Ocean Experiences</h1>
 
           {/*body*/}
           <div className="mt-16 flex flex-col md:flex-row-reverse w-full md:justify-between gap-16 md:gap-28 lg:gap-32 md:items-center">

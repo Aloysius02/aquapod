@@ -91,7 +91,6 @@ export default function WhyAquapod() {
     <section
       id={navLinks[3]?.id}
       ref={container}
-
       className="min-h-[100dvh] relative"
       >
       <div className="w-screen overflow-hidden">
@@ -108,7 +107,7 @@ export default function WhyAquapod() {
         {/*Marquee*/}
         <div className="mt-4">
           <Marquee applyMask={false} reverse={isReverse}>
-            <h2 className="text-4xl md:text-8xl font-medium ">
+            <h2 className="text-marquee font-medium ">
               Why Aquapods®?
             </h2>
           </Marquee>
@@ -170,7 +169,7 @@ function DeskTop() {
         ".card3",
         ".card4"],
         {
-          x: "101%"
+          x: "102%"
         });
       gsap.set([".card3",
         ".card4"],
@@ -254,15 +253,20 @@ function DeskTop() {
 
         const title = document.querySelector(".card3 .title");
         const desc = document.querySelector(".card3 .description");
+        const cardIndex = document.querySelector(".card3 .card-index");
         const indexNumber = document.querySelector(".card3 .index");
 
-        if (!title || !desc || !indexNumber) return;
+        if (!title || !desc || !indexNumber || !cardIndex) return;
 
         let splitTitle = splitText(title);
-        let splitDesc = splitText(title);
+        let splitDesc = splitText(desc);
 
         if (!splitTitle || !splitDesc) return;
 
+        gsap.to(cardIndex, {
+          opacity: 0,
+          duration: 0.5
+        })
 
         gsap.to([splitTitle.lines, splitDesc.lines], {
           y: -100,
@@ -280,6 +284,7 @@ function DeskTop() {
 
             if (!newSplitTitle || !newSplitDesc) return;
 
+
             gsap.fromTo(
               [newSplitTitle.lines, newSplitDesc.lines],
               {
@@ -289,6 +294,10 @@ function DeskTop() {
                 y: 0, stagger: 0.08
               }
             );
+            gsap.to(cardIndex, {
+              opacity: 1,
+              duration: 0.5
+            })
           },
         });
       }
@@ -361,13 +370,13 @@ function DeskTop() {
         <div key={i} className={cn("", cardClass, `card${i + 1}`)}>
           {/*card 1 and card 3*/}
           {(i === 0 || i === 2) && (
-            <div className="w-full h-full p-8 flex justify-between flex-col">
+            <div className="w-full h-full p-4 md:p-8 flex justify-between flex-col">
               <p className="title text-3xl max-w-[350px] text-sp">
                 {i === 0
                 ? whyAquapodData[0]?.title: whyAquapodData[1]?.title}
               </p>
-              <div className="flex justify-between items-center w-full">
-                <div className="flex items-center gap-2">
+              <div className="flex justify-between items-center w-full gap-6">
+                <div className="flex items-center gap-2 card-index">
                   <span className="index w-12 h-12 border-2 border-sp flex justify-center text-[1.2rem] items-center rounded-full border-dashed">
                     0
                     {i === 0

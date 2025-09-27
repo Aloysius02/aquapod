@@ -4,7 +4,7 @@ export default function Location() {
       <p className="text-sm">
         Closer than you think
       </p>
-      <h2 className="text-3xl md:text-5xl font-medium max-w-[300px] sm:max-w-[500px] md:max-w-[800px]">Our AquaPods® are located on serene coastal waters with easy access by
+      <h2 className="text-3xl md:text-5xl max-w-[300px] sm:max-w-[500px] md:max-w-[800px]">Our AquaPods® are located on serene coastal waters with easy access by
         <br />
       <span className="underline text-sp">
         boat or scenic drive.

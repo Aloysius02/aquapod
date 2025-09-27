@@ -146,6 +146,10 @@
         @apply text-sm;
     }
 
+    .text-marquee {
+        @apply text-5xl sm:text-8xl;
+    }
+
     /*hero*/
     .masked {
         -webkit-mask-image: url(#mask);

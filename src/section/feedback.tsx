@@ -156,7 +156,7 @@ export default function Feedback() {
 
         {/* Second part */}
         <div className="mt-8 flex flex-col gap-10">
-          <h2 className="quote text-2xl sm:text-3xl md:text-6xl md:max-w-[800px] sm:max-w-[500px]">
+          <h2 className="quote text-2xl sm:text-3xl md:text-6xl md:max-w-[1000px] sm:max-w-[500px]">
             {testimony[0]?.quote}
           </h2>
 

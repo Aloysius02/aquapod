@@ -53,27 +53,28 @@ export default function Aquapod() {
 
         const tl = gsap.timeline()
 
+        const ease = "power3.out"
         tl.to(title, {
           y: reveal ? 0: 50,
-          duration: 1,
-          stagger: 0.06,
-          ease: "power2.out"
+          duration: 0.5,
+          stagger: 0.04,
+          ease
         })
         tl.to(desc, {
           y: reveal ? 0: 50,
-          duration: 1,
+          duration: 0.5,
           stagger: 0.06,
-          ease: "power2.out",
+          ease,
         }, "<+=0.06")
         tl.to(button, {
           opacity: reveal ? 1: 0,
-          duration: 1,
-          ease: "power2.out",
+          duration: 0.5,
+          ease
         }, "<")
         tl.to(progress, {
           opacity: reveal ? 1: 0,
           duration: 1,
-          ease: "power2.out",
+          ease
         }, "<")
       }
 
@@ -206,10 +207,10 @@ export default function Aquapod() {
 
 
     //details
-    gsap.set(".details .container",
+    gsap.set(".details .detail-container",
       {
         height: 0,
-        width: isMobile ? "100%": 0
+        width: isMobile ? "100%": "100%"
       })
     gsap.set(".details .overlay",
       {
@@ -222,10 +223,6 @@ export default function Aquapod() {
     gsap.set(".details .price-container",
       {
         width: 0
-      })
-    gsap.set(".details .detail-btn",
-      {
-        rotate: 0
       })
   }
 
@@ -240,26 +237,22 @@ export default function Aquapod() {
           detail.style.display = "block";
         }
       }
-    })
+    });
 
     tl.to(".details .overlay",
       {
         opacity: 1
-      })
-    tl.to(".details .detail-btn",
-      {
-        rotate: 225
-      })
-    tl.to(".details .container",
+      });
+    tl.to(".details .detail-container",
       {
         height: "100dvh",
         width: "100%"
       },
-      "<+=0.08")
+      "<+=0.08");
     tl.to(".details .price-container",
       {
         width: "100%"
-      })
+      });
     tl.to(".details .opacityReveal",
       {
         opacity: 1
@@ -285,16 +278,11 @@ export default function Aquapod() {
       {
         width: 0
       })
-    tl.to(".details .container",
+    tl.to(".details .detail-container",
       {
         height: 0,
-        width: isMobile ? "100%": 0
+        width: isMobile ? "100%": "100%"
       })
-    tl.to(".details .detail-btn",
-      {
-        rotate: 0
-      },
-      "<")
     tl.to(".details .overlay",
       {
         opacity: 0
@@ -303,72 +291,83 @@ export default function Aquapod() {
 
 
   return (
-    <section ref={container}>
-      {/*cards*/}
-      <div className="h-[100dvh] relative w-screen">
-        {/*Marquee*/}
-        <div className="marquee w-full absolute top-1/2 left-1/2 -translate-x-1/2
-          -translate-y-1/2 overflow-hidden">
-          <Marquee applyMask={false}>
-            <h2 className="text-4xl md:text-8xl font-medium ">
-              Aquapods<sub>®</sub>
-            </h2>
-          </Marquee>
-        </div>
+    <div ref={container}>
+      <section>
+        {/*cards*/}
+        <div className="h-[100dvh] relative w-screen">
+          {/*Marquee*/}
+          <div className="marquee w-full absolute top-1/2 left-1/2 -translate-x-1/2
+            -translate-y-1/2 overflow-hidden">
+            <Marquee applyMask={false}>
+              <h2 className="text-marquee font-medium ">
+                Aquapods<sub>®</sub>
+              </h2>
+            </Marquee>
+          </div>
 
-        <div className="w-screen max-w-7xl relative">
-          {Aquapods.map((card, i)=>(
-            <div
-              id={card?.id}
-              key={card?.id}
-              style={ {
-                transform: `translateY(calc(120dvh * ${i}))`
-              }}
-              className={cn("w-full h-[100dvh] rounded-[2rem] md:rounded-[5rem] overflow-hidden absolute",
-              )}>
-              <img src={card?.src} />
+          <div className="relative">
+            {Aquapods.map((card,
+              i)=>(
+              <div
+                id={card?.id}
+                key={card?.id}
+                style={ {
+                  transform: `translateY(calc(120dvh * ${i}))`
+                }}
+                className={cn("w-full h-[100dvh] rounded-[2rem] md:rounded-[4rem] overflow-hidden absolute",
+                )}>
+                <img src={card?.src} />
 
-            {/*content*/}
-            <div className="absolute inset-0 container">
-              <h3 className="title text-shadow absolute top-[2rem] sm:top-1/2 sm:-translate-y-1/2 font-medium text-2xl sm:text-3xl md:text-5xl">{card?.title}</h3>
-
-              <div className="absolute bottom-[8rem] flex flex-col sm:flex-row  sm:justify-between w-full sm:pr-10 sm:items-center gap-6">
-                {/*left/top*/}
-                <div className="flex sm:items-center gap-4 md:gap-8 flex-col sm:flex-row">
-                  <button
-                    onClick={()=> {
-                      setDetails(card)
-                      openDetails()
-                    }}
-                    className="card-btn rounded-full w-14 h-14 bg-sp flex justify-center items-center text-black shrink-0">
-                    <IoMdAdd size={28} />
-                  </button>
-                  <p className="description text-shadow text-sm max-w-[300px] sm:max-w-[350px] text-left">
-                    {card?.description}
-                  </p>
+              {/*content*/}
+              <div className="absolute inset-0">
+                <div className="px-4 md:px-10">
+                  <h3 className="title text-shadow absolute top-[2rem] sm:top-1/2 sm:-translate-y-1/2 font-medium text-2xl sm:text-3xl md:text-5xl">{card?.title}</h3>
                 </div>
 
-                {/*right/bottom*/}
-                <div className="progress w-[250px] md:w-[300px]  h-[2px]  bg-white/[0.3] rounded-full relative overflow-hidden">
-                  <span className="absolute left-0 top-0 h-full w-0 bg-sp"></span>
+                <div className="absolute bottom-[8rem] flex flex-col sm:flex-row  sm:justify-between w-full  sm:items-center gap-6 px-4 md:px-10">
+                  {/*left/top*/}
+                  <div className="flex sm:items-center gap-4 md:gap-8 flex-col sm:flex-row">
+                    <button
+                      onClick={()=> {
+                        setDetails(card)
+                        openDetails()
+                      }}
+                      className="card-btn rounded-full w-14 h-14 bg-sp flex justify-center items-center text-black shrink-0">
+                      <IoMdAdd size={28} />
+                    </button>
+                    <p className="description text-shadow text-sm max-w-[300px]  md:max-w-[350px] text-left">
+                      {card?.description}
+                    </p>
+                  </div>
+
+                  {/*right/bottom*/}
+                  <div className="progress w-[250px] md:w-[300px]  h-[2px] md:h-[3px]  bg-white/[0.3] rounded-full relative overflow-hidden">
+                    <span className="absolute left-0 top-0 h-full w-0 bg-sp"></span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          ))}
+            ))}
+        </div>
       </div>
+    </section>
 
-    </div>
 
     {/*details*/}
-    <div className="details fixed inset-0 hidden">
+    <div className="details fixed top-0 left-0 w-screen h-[100dvh] z-20 hidden">
       <div className="overlay absolute inset-0 bg-black/[0.8]">
 
-        <div className="container absolute left-0 bottom-0 w-full h-[100dvh] overflow-hidden">
+        {/*close button desktop*/}
+        <button onClick={closeDetails} className="rounded-full w-14 h-14 secondary-bg text-white flex justify-center items-center text-black right-4 top-4 absolute  max-sm:hidden z-50 rotate-45">
+          <IoMdAdd size={28} />
+        </button>
 
-          <div className="hide-scrollbar absolute max-sm:inset-2 sm:w-[350px] sm:bottom-[10rem] sm:left-6 sm:top-[8rem] secondary-bg rounded-2xl left-2  overflow-auto ">
 
-            <div className="w-full h-full p-6 sm:flex justify-between flex-col">
+        <div className="detail-container absolute left-0 bottom-0 w-full h-[100dvh] overflow-hidden">
+
+          <div className="hide-scrollbar absolute max-sm:inset-2 sm:w-[350px] sm:bottom-4 sm:top-4 sm:left-4 secondary-bg rounded-2xl">
+
+            <div className="w-full h-full p-6 sm:flex justify-between flex-col overflow-auto hide-scrollbar">
               {/*close button*/}
               <button onClick={closeDetails} className="opacityReveal rounded-full w-14 h-14 primary-bg flex justify-center items-center text-white fixed rotate-[225deg] sm:hidden">
                 <IoMdAdd size={28} />
@@ -391,12 +390,13 @@ export default function Aquapod() {
 
               {/*second part*/}
               <div className="mt-10">
-                <p className="text-sm text-muted-foreground mb-6">
+                <p className="text-sm text-sp mb-6">
                   {Details?.description}
                 </p>
 
                 <div>
-                  {Details?.detail.map((item, i)=>(
+                  {Details?.detail.map((item,
+                    i)=>(
                     <div key={i} className={cn("w-full py-3",
                       Details?.detail.length - 1 !== i ? "border-b-[1px] border-white/[0.3]": ""
                     )}>
@@ -417,7 +417,7 @@ export default function Aquapod() {
             </div>
 
             {/*bottom*/}
-            <div className="price-container w-full rounded-full h-14 primary-bg max-sm:mt-8">
+            <div className="price-container w-full rounded-full h-14 primary-bg max-sm:mt-8 shrink-0">
               <div className="flex justify-between items-center px-4 text-sm w-full h-full">
                 <p className="opacityReveal text-muted-foreground">
                   Cost
@@ -430,16 +430,10 @@ export default function Aquapod() {
             <div className="h-6 w-full sm:hidden"></div>
           </div>
         </div>
-
-
-        {/*close button desktop*/}
-        <button onClick={closeDetails} className="detail-btn rounded-full w-14 h-14 bg-sp flex justify-center items-center text-black shrink-0 absolute bottom-[6rem] max-sm:hidden z-50">
-          <IoMdAdd size={28} />
-        </button>
       </div>
 
     </div>
   </div>
-</section>
+</div>
 )
 }

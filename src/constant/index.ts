@@ -43,9 +43,6 @@ const Aquapods = [
             { "Air conditioning": "Available" },
             { "Wi-Fi": "High Speed" },
             { "Smart lighting": "Voice-controlled" },
-            { "Plunge pool": "Available" },
-            { "Outdoor shower": "Fresh water" },
-            { Hammock: "Ocean-view" },
             { Deck: "None" }
         ],
         price: "1,500"
@@ -61,16 +58,14 @@ const Aquapods = [
             { "Air conditioning": "Available" },
             { "Plunge pool": "Available" },
             { "Artificial reef": "Pod-integrated" },
-            { "Snorkel gear": "Included" },
-            { "Underwater cameras": "Live marine feed" },
-            { Deck: "Private wooden deck with hammocks" }
+            { "Snorkel gear": "Included" }
         ],
         price: "2,200"
     },
     {
         id: "reef",
         title: "Reef Aquapod®",
-        src: "images/reef.jpg",
+        src: "images/reef2.jpg",
         description:
             "Premium pod for 4, with snorkeling entry and underwater cameras for marine views. Unforgettable ocean connections await.",
         detail: [
@@ -78,9 +73,7 @@ const Aquapods = [
             { "Air conditioning": "Available" },
             { "Plunge pool": "Available" },
             { Deck: "Integrated reef access with cameras" },
-            { "Wi-Fi": "High-speed" },
-            { "Snorkel gear": "Included" },
-            { "Underwater cameras": "Live marine feed" }
+            { "Wi-Fi": "High-speed" }
         ],
         price: "3,000"
     }

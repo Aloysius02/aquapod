@@ -21,7 +21,7 @@ export default function Footer() {
       </div>
 
       <Marquee applyMask={false}>
-        <h2 className="text-4xl md:text-8xl font-medium ">
+        <h2 className="text-marquee">
           Book Your Aquapod—
         </h2>
       </Marquee>
@@ -39,7 +39,7 @@ export default function Footer() {
           </div>
           <ul className="flex flex-col relative">
             {navLinks.map((item, i)=>(
-              <li key={i} className="font-medium text-xl hover:text-sp transition-all duration-300">
+              <li key={i} className="text-xl hover:text-sp transition-all duration-300">
                 <a href={item?.link}>{item?.label}</a>
               </li>
             ))}
@@ -50,7 +50,7 @@ export default function Footer() {
       {/*seperator*/}
       <div className="w-full h-[1px] bg-sp my-8"></div>
 
-      <footer className="w-screen padding-x overflow-hidden flex flex-col">
+      <footer className="container padding-x overflow-hidden flex flex-col">
         <div className="text-sp size-sm flex flex-col sm:flex-row w-full sm:justify-between sm:items-center">
           <p>
             Website made by Aloysius

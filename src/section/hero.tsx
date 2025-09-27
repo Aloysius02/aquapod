@@ -159,26 +159,31 @@ export default function Hero() {
             ease,
             stagger: 0.06
           }, "<+=0.1")
+
           //navbar
-          tl.to(".menu", {
-            opacity: progress > threshold ? 1: 0,
-            scale: progress > threshold ? 1: 0.6,
-            duration: 1,
-            ease,
-          }, "<+=0.1");
+          if (progress > threshold) {
+            gsap.to(".menu", {
+              opacity: 1,
+              scale: 1,
+              duration: 1,
+              ease,
+            });
+          }
         }
       });
     }
 
-    window.addEventListener("resize", () => {
-      setCanvasSize();
-      render();
-      ScrollTrigger.refresh();
-    });
+    window.addEventListener("resize",
+      () => {
+        setCanvasSize();
+        render();
+        ScrollTrigger.refresh();
+      });
 
 
     return () => {
-      window.removeEventListener("resize", setCanvasSize);
+      window.removeEventListener("resize",
+        setCanvasSize);
     };
   },
     []);
@@ -337,7 +342,7 @@ export default function Hero() {
           </div>
 
           {/*hero content*/}
-          <div className="container relative padding-x h-full">
+          <div className="relative padding-x h-full">
             <div className="absolute w-full  h-[100dvh]">
               <p className="intro-text text-shadow font-asap w-full italic text-sm
                 max-w-[250px] md:max-w-[400px] md:text-xl absolute top-[50%]
@@ -355,7 +360,7 @@ export default function Hero() {
                     max-w-[200px] md:max-w-[250px] text-shadow">
                     Drift Closer to Nature Find Your Peace
                   </p>
-                  <p className="hero-desc text-sm text-shadow max-w-[350px] sm:max-w-[200px] md:w-[250px] flex">
+                  <p className="hero-desc text-sm text-shadow max-w-[300px] sm:max-w-[200px] md:w-[250px] flex">
                     Experience luxury on the waves, immerse in
                     nature with AquaPods<sub>®</sub>
                   </p>

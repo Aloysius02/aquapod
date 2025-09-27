@@ -49,8 +49,7 @@ export default function Intro() {
     <section ref={container} id={navLinks[1]?.id} className="bg-gradient-to-b from-zinc-900/[0] to-zinc-900 relative">
 
       <div className="container padding-y padding-x">
-        <h2 className="text-2xl sm:text-3xl md:text-5xl w-full max-w-5xl
-          font-medium welcome-text mb-12 sm:mb-16 md:mb-20">Welcome to a world of serene ocean bliss with AquaPods®,
+        <h2 className="text-2xl sm:text-3xl md:text-5xl w-full w-full sm:max-w-5xl welcome-text mb-12 sm:mb-16 md:mb-20">Welcome to a world of serene ocean bliss with AquaPods®,
           where you will
           discover tranquil water atmospheres from floating retreats, nestled in
           breathtaking seascapes. Immerse yourself in nature’s embrace, experiencing
@@ -66,7 +65,7 @@ export default function Intro() {
             <img src="images/intro2.jpg" alt="aquapod" />
         </div>
       </div>
-      <p className="text-sp size-md max-w-[450px] text-white">
+      <p className="text-sp size-md w-full sm:max-w-[450px] text-white">
         A place where you can be with yourself and your loved ones.
         A place where you can experience unforgettable ocean moments.
       </p>

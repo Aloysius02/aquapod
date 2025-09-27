@@ -62,33 +62,36 @@ export default function Discover() {
         <p className="size-sm mb-4">
           Discover Available AquaPods®
         </p>
-        <h2 className="title size-xl mb-10 md:mb-12 font-medium">Choose the one you like best</h2>
+        <h2 className="title size-xl mb-10 md:mb-12 leading-none">Choose the one you like best</h2>
 
         {/*down*/}
-        <div className="flex flex-col sm:flex-row gap-10 sm:gap-10 md:gap-14
-          lg:gap-18 sm:items-center">
+        <div className="flex flex-col sm:flex-row gap-10 sm:items-start w-full sm:justify-between">
 
           {/*left*/}
-          <p className="text-sp size-md flex-1">
-            You can choose one of three premium options. Each AquaPod provides
-            the highest quality and meets your relaxation needs. Choose the one
-            you like
-          </p>
+          <div className="flex-1">
+            <p className="text-sp size-md max-w-[500px]">
+              You can choose one of three premium options. Each AquaPod provides
+              the highest quality and meets your relaxation needs. Choose the one
+              you like
+            </p>
+          </div>
 
           {/*right*/}
           <div className="flex-1 ">
-            <p className="size-sm w-[200px] mb-6">
-              All AquaPods® are built on the same principles
-            </p>
-            <div className="flex gap-3 flex-wrap">
-              {choose.map((item, i)=>(
-                <div key={i} className={cn("px-4 py-3 rounded-full border-2 w-fit",
-                  i % 2 === 0 ? "text-sp border-sp": "border-white")}>
-                  <p className="text-[1.2rem]">
-                    { item }
-                  </p>
-                </div>
-              ))}
+            <div className="max-w-[600px]">
+              <p className="size-sm w-[200px] mb-6">
+                All AquaPods® are built on the same principles
+              </p>
+              <div className="flex gap-3 flex-wrap">
+                {choose.map((item, i)=>(
+                  <div key={i} className={cn("px-4 py-3 rounded-full border-2 w-fit",
+                    i % 2 === 0 ? "text-sp border-sp": "border-white")}>
+                    <p className="text-[1.2rem]">
+                      { item }
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

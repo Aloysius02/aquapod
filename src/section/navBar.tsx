@@ -190,7 +190,7 @@ export default function NavMenu() {
 
   return (
     <nav ref={container}>
-      <div className="wrapper hidden fixed w-screen h-[100dvh] top-0 left-0">
+      <div className="wrapper hidden fixed w-screen h-[100dvh] top-0 left-0 z-40">
         <div className="overlay absolute inset-0 bg-black opacity-0" />
 
         <div className="absolute inset-0">
@@ -234,7 +234,7 @@ export default function NavMenu() {
     </div>
 
     {/*menu*/}
-    <div className="menu w-[150px] h-[60px] bg-white fixed left-[50%] -translate-x-1/2 bottom-[2rem] rounded-full p-2 flex items-center justify-between">
+    <div className="menu w-[150px] h-[60px] bg-white fixed left-[50%] -translate-x-1/2 bottom-[2rem] rounded-full p-2 flex items-center justify-between z-50">
       <div className="flex-1 h-full p-2 overflow-hidden relative flex justify-center items-center text-black text-xl">
         <p className="open absolute">
           Open
