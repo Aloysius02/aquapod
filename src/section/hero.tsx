@@ -37,7 +37,7 @@ export default function Hero() {
   });
 
   useGSAP(() => {
-    //ssetInitialState
+    //setInitialState
     setInitialState();
 
 
@@ -64,6 +64,7 @@ export default function Hero() {
     function onLoad() {
       imagesToLoad--;
       if (!imagesToLoad) {
+        introAnimation();
         render();
         setupScrollTrigger();
       }
@@ -137,24 +138,25 @@ export default function Hero() {
             opacity: gsap.utils.clamp(0, 1, opacity)
           });
 
+          const ease = "power3.out"
           const threshold = 0.7;
           const tl = gsap.timeline()
           tl.to(".hero-title .char", {
-            y: progress > threshold ? 0: 100,
+            y: progress > threshold ? 0: "100%",
             duration: 1,
-            ease: "power1.out",
+            ease,
             stagger: 0.06
           })
           .to(".hero-subtitle .line", {
-            y: progress > threshold ? 0: 50,
+            y: progress > threshold ? 0: "100%",
             duration: 1,
-            ease: "power1.out",
+            ease,
             stagger: 0.06
           }, "<+=0.1")
           .to(".hero-desc .line", {
-            y: progress > threshold ? 0: 50,
+            y: progress > threshold ? 0: "100%",
             duration: 1,
-            ease: "power1.out",
+            ease,
             stagger: 0.06
           }, "<+=0.1")
           //navbar
@@ -162,7 +164,7 @@ export default function Hero() {
             opacity: progress > threshold ? 1: 0,
             scale: progress > threshold ? 1: 0.6,
             duration: 1,
-            ease: "power2.out",
+            ease,
           }, "<+=0.1");
         }
       });
@@ -174,9 +176,6 @@ export default function Hero() {
       ScrollTrigger.refresh();
     });
 
-
-    //loader animation
-    introAnimation();
 
     return () => {
       window.removeEventListener("resize", setCanvasSize);
@@ -218,23 +217,23 @@ export default function Hero() {
 
     gsap.set(".loaderText .char",
       {
-        x: 50
+        x: "100%"
       });
     gsap.set(".intro-text .line",
       {
-        y: 50
+        y: "100%"
       });
     gsap.set(".hero-title .char",
       {
-        y: 100,
+        y: "100%",
       });
     gsap.set(".hero-subtitle .line",
       {
-        y: 50
+        y: "100%"
       });
     gsap.set(".hero-desc .line",
       {
-        y: 50
+        y: "100%"
       });
 
     //nav bar
@@ -317,51 +316,56 @@ export default function Hero() {
     .to(".intro-text .line", {
       y: 0,
       duration: 1,
-      ease: "power2.out",
+      ease: "power3.out",
       stagger: 0.06
     });
   }
 
   return (
     <section id={navLinks[0]?.id} className="hero w-screen h-[700vh]">
-      <div className="hero-container w-screen h-screen fixed top-0">
+      <div className="hero-container w-full h-[100dvh] fixed top-0">
+
         <div
           className="masked relative w-full h-full"
           >
+          {/*canva*/}
           <div className="canvas-container absolute w-full h-full scale-110">
             <canvas
               ref={canvasRef}
               className="w-full h-full"
               ></canvas>
           </div>
-          <div className="container absolute w-screen h-[100dvh]">
-            <p className="intro-text text-shadow font-asap w-full italic text-sm
-              max-w-[250px] md:max-w-[400px] md:text-xl absolute top-[50%]
-              left-[50%] -translate-x-1/2 -translate-y-1/2 text-center">
-              Step into serenity with ocean vistas and golden sunsets, where AquaPods® offer eco-luxury and deep relaxation. Recharge and reconnect with nature’s embrace.
 
-            </p>
-            <div className="mt-[3rem]">
-              <h1 className="hero-title text-5xl md:text-8xl lg:text-9xl
-                font-bold text-white md:absolute top-[1rem] left-[1rem]
-                text-shadow mb-6">
-                Aquapods<sub>®</sub>
-              </h1>
-              <div className=" flex flex-col gap-4 md:flex-row md:justify-between md:absolute bottom-[1rem] w-full left-0 md:px-4 md:items-center">
-                <p className="hero-subtitle text-xl md:text-2xl  font-medium
-                  max-w-[200px] md:max-w-[250px] text-shadow">
-                  Drift Closer to Nature Find Your Peace
-                </p>
-                <p className="hero-desc text-sm text-shadow max-w-[350px] md:w-[250px]
-                  ">
-                  Experience luxury on the waves, immerse in
-                  nature with AquaPods<sub>®</sub>
-                </p>
+          {/*hero content*/}
+          <div className="container relative padding-x h-full">
+            <div className="absolute w-full  h-[100dvh]">
+              <p className="intro-text text-shadow font-asap w-full italic text-sm
+                max-w-[250px] md:max-w-[400px] md:text-xl absolute top-[50%]
+                left-[50%] -translate-x-1/2 -translate-y-1/2 text-center">
+                Step into serenity with ocean vistas and golden sunsets, where AquaPods® offer eco-luxury and deep relaxation. Recharge and reconnect with nature’s embrace.
+              </p>
+              <div className="mt-[3rem]">
+                <h1 className="hero-title text-5xl sm:text-8xl lg:text-9xl
+                  font-bold text-white sm:absolute top-[1rem] left-0
+                  text-shadow mb-6">
+                  Aquapods
+                </h1>
+                <div className=" flex flex-col gap-4 sm:flex-row sm:justify-between sm:absolute bottom-[1rem] w-full left-0  sm:items-center text-white">
+                  <p className="hero-subtitle text-xl md:text-2xl  font-medium
+                    max-w-[200px] md:max-w-[250px] text-shadow">
+                    Drift Closer to Nature Find Your Peace
+                  </p>
+                  <p className="hero-desc text-sm text-shadow max-w-[350px] sm:max-w-[200px] md:w-[250px] flex">
+                    Experience luxury on the waves, immerse in
+                    nature with AquaPods<sub>®</sub>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="loader-container secondary-bg  absolute inset-0">
+          {/*loader*/}
+          <div className="loader-container secondary-bg  absolute inset-0  ">
             <div
               className={cn(
                 "loader absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2  bg-white  origin-left scale-x-0  ",
@@ -376,7 +380,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <svg className="absolute inset-0 w-screen h-screen">
+        <svg className="absolute top-0 left-0 w-screen h-[100dvh] ">
           <mask
             id="mask"
             maskUnits="userSpaceOnUse"

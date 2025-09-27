@@ -199,8 +199,8 @@ export default function NavMenu() {
 
               <div className="menu-content w-full h-full flex flex-col sm:flex-row sm:justify-between sm:items-center overflow-auto">
                 {/*left*/}
-                <div className="flex-1 sm:h-full p-4 md:p-8 flex flex-col justify-between gap-4">
-                  <ul className="flex flex-col gap-2">
+                <div className="flex-1 sm:h-full p-4 sm:p-6 md:p-8 flex flex-col justify-between gap-4">
+                  <ul className="flex flex-col gap-2 sm:gap-3">
                     {navLinks.map((item,
                       i)=>(
                       <li key={i} className="navlinks text-3xl sm:text-4xl md:text-6xl text-sp hover:text-white duration-300 transition-all">
@@ -216,7 +216,7 @@ export default function NavMenu() {
 
                 </div>
                 {/*right*/}
-                <div className="sm:h-full h-[40%] sm:w-[400px] w-full rounded-[2rem] overflow-hidden relative">
+                <div className="sm:h-full h-[40%] sm:w-[40%] w-full rounded-[2rem] overflow-hidden relative">
                   <img className="nav-img" src="images/nav.jpg" />
                 <div className="absolute top-1/2 w-full -translate-y-1/2">
                   <Marquee applyMask={false}>

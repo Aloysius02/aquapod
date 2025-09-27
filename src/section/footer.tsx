@@ -3,53 +3,12 @@ import {
   navLinks
 } from "@/constant"
 import Social from "@/components/social"
-import {
-  Textfit
-} from 'react-textfit';
-// import {
-//   SplitText
-// } from "gsap/SplitText";
-// import {
-//   useGSAP
-// } from "@gsap/react";
-import {
-  useRef
-} from "react";
-// import gsap from "gsap";
-// import {
-//   ScrollTrigger
-// } from "gsap/ScrollTrigger";
+
 
 export default function Footer() {
 
-  const container = useRef(null)
-
-  // useGSAP(()=> {
-  //   SplitText.create("footer-text", {
-  //     type: "chars",
-  //     charsClass: "chars",
-  //     mask: "chars"
-  //   })
-
-  //   gsap.set(".footer-text .chars", {
-  //     x: 100
-  //   })
-
-  //   ScrollTrigger.create({
-  //     trigger: container.current,
-  //     start: "bottom bottom",
-  //   })
-
-
-  // }, {
-  //   scope: container
-  // })
-
-
-
-
   return (
-    <section ref={container} className="gradient-bg2 overflow-hidden">
+    <section className="gradient-bg2 overflow-hidden">
       <div className="padding-y">
 
         {/*heading*/}
