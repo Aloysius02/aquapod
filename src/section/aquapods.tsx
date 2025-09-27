@@ -80,11 +80,9 @@ export default function Aquapod() {
 
 
       function contentAnimationProgress(progress: number, id: string) {
-        if (progress > 0.7 && progress < 0.8) {
+        if (progress < 0.8) {
           cardContentReveal(id, false)
-        }
-
-        if (progress > 0.8 && progress < 0.9) {
+        } else if (progress > 0.8) {
           cardContentReveal(id, true)
         }
       }
