@@ -351,8 +351,8 @@ export default function Hero() {
           </div>
 
           {/*hero content*/}
-          <div className="relative padding-x h-full container">
-            <div className="absolute w-full  h-[100dvh]">
+          <div className="relative h-full container">
+            <div className="absolute w-full h-[100dvh] left-0 padding-x">
               <p className="intro-text text-shadow font-asap w-full italic text-sm
                 max-w-[250px] md:max-w-[400px] md:text-xl absolute top-[50%]
                 left-[50%] -translate-x-1/2 -translate-y-1/2 text-center">
