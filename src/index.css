@@ -82,6 +82,9 @@
 }
 
 @layer utilities {
+    .container {
+        @apply mx-auto w-full max-w-7xl;
+    }
     .primary-bg {
         @apply bg-zinc-900;
     }
@@ -98,7 +101,7 @@
         @apply py-[4rem];
     }
     .padding-x {
-        @apply max-sm:px-4 px-2;
+        @apply px-4 sm:px-6 md:px-8;
     }
 
     .hide-scrollbar,
